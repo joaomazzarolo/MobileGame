@@ -7,6 +7,7 @@ public class TouchController : MonoBehaviour
     public Vector2 pastPosition;
     public float velocity;
 
+
     private void Update()
     {
         if (Input.GetMouseButton(0))
