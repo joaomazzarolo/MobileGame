@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Ebac.Singleton;
+using TMPro;
+using DG.Tweening;
 
 public class PlayerController : Singleton<PlayerController>
 {
@@ -11,12 +13,18 @@ public class PlayerController : Singleton<PlayerController>
     public string enemyTag = "Enemy";
     public string endLineTag = "EndLine";
     public GameObject endScreen;
+    public TextMeshPro uiTextPowerUp;
 
     private Vector3 _pos;
     private bool _canRun;
 
     private float _currentSpeed;
     private Vector3 _startPosition;
+    public bool invincible = false;
+
+    [Header("Coin Setup")]
+    public GameObject coinCollector;
+
     private void Start()
     {
         _startPosition = transform.position;
@@ -37,15 +45,18 @@ public class PlayerController : Singleton<PlayerController>
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.tag == enemyTag)
+        if (collision.transform.CompareTag(endLineTag) || collision.transform.CompareTag(enemyTag))
         {
-            EndGame();
+            if (!invincible) EndGame();
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.tag == "EndLine") EndGame();
+        if (other.transform.CompareTag(endLineTag) || other.transform.CompareTag(enemyTag))
+        {
+            if (!invincible) EndGame();
+        }
 
     }
 
@@ -62,7 +73,7 @@ public class PlayerController : Singleton<PlayerController>
 
     public void SetPowerUpText(string s)
     {
-        //uiTextPowerUp.text = s;
+        uiTextPowerUp.text = s;
     }
     public void PowerUpSpeedUp(float f)
     {
@@ -71,5 +82,23 @@ public class PlayerController : Singleton<PlayerController>
     public void ResetSpeed()
     {
         _currentSpeed = speed;
+    }
+    public void SetInvincible(bool b)
+    {
+        invincible = b;
+    }
+    public void ChangeHeight(float amount, float duration, float animationDuration, Ease ease)
+    {
+        transform.DOMoveY(_startPosition.y + amount,
+        animationDuration).SetEase(ease);
+        Invoke(nameof(ResetHeight), duration);
+    }
+    public void ResetHeight()
+    {
+        transform.DOMoveY(_startPosition.y, .1f);
+    }
+    public void ChangeCoinCollectorSize(float amount)
+    {
+        coinCollector.transform.localScale = Vector3.one * amount;
     }
 }
