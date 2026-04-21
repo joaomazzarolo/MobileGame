@@ -25,8 +25,14 @@ public class PlayerController : Singleton<PlayerController>
     [Header("Coin Setup")]
     public GameObject coinCollector;
 
+    [Header("Animation")]
+    public AnimatorManager animatorManager;
+
+    private float _baseSpeedToAnimation = 7;
+
     private void Start()
     {
+        animatorManager.Play(AnimatorManager.AnimationType.IDLE);
         _startPosition = transform.position;
         ResetSpeed();
     }
@@ -45,30 +51,59 @@ public class PlayerController : Singleton<PlayerController>
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.CompareTag(endLineTag) || collision.transform.CompareTag(enemyTag))
+        if (collision.transform.CompareTag(enemyTag))
         {
-            if (!invincible) EndGame();
+            if (!invincible)
+            {
+                MoveBack(collision.transform);
+                LoseGame();
+            }
         }
+        else if (collision.transform.CompareTag(endLineTag))
+        {
+            WinGame();
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.CompareTag(endLineTag) || other.transform.CompareTag(enemyTag))
+        if (other.transform.CompareTag(enemyTag))
         {
-            if (!invincible) EndGame();
+            if (!invincible)
+            {
+                MoveBack(other.transform);
+                LoseGame();
+            }
+        } else if (other.transform.CompareTag(endLineTag))
+        {
+            WinGame();
         }
 
     }
 
-    private void EndGame()
+    private void MoveBack(Transform t)
+    {
+        t.DOMoveZ(1f, .3f).SetRelative();
+    }
+
+    private void WinGame()
     {
         _canRun = false;
+        animatorManager.Play(AnimatorManager.AnimationType.IDLE);
         endScreen.SetActive(true);
     }
 
+    private void LoseGame()
+    {
+        _canRun = false;
+        animatorManager.Play(AnimatorManager.AnimationType.DEAD);
+        endScreen.SetActive(true);
+    }
     public void StartToRun()
     {
         _canRun = true;
+        animatorManager.Play(AnimatorManager.AnimationType.RUN, _currentSpeed/_baseSpeedToAnimation);
     }
 
     public void SetPowerUpText(string s)
