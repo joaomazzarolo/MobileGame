@@ -192,11 +192,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89e20167823a30d459856414377997d1, type: 3}
---- !u!95 &84749752 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 7193805671317595757, guid: 89e20167823a30d459856414377997d1, type: 3}
-  m_PrefabInstance: {fileID: 84749751}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &169033930
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1988,39 +1983,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1630966328 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5531986718136724959, guid: 89e20167823a30d459856414377997d1, type: 3}
-  m_PrefabInstance: {fileID: 84749751}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1630966329 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5156129202013452133, guid: 89e20167823a30d459856414377997d1, type: 3}
   m_PrefabInstance: {fileID: 84749751}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1630966330
+--- !u!114 &1630966330 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 2162673247373563511, guid: 89e20167823a30d459856414377997d1, type: 3}
+  m_PrefabInstance: {fileID: 84749751}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1630966328}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: adbc5cf3feca2dd4480dd3b002a4faaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 84749752}
-  animatorSetups:
-  - type: 0
-    trigger: idle
-    speed: 1
-  - type: 1
-    trigger: run
-    speed: 1
-  - type: 2
-    trigger: dead
-    speed: 2
 --- !u!1 &1655551963
 GameObject:
   m_ObjectHideFlags: 0
