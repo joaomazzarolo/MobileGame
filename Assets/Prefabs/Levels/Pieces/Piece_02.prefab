@@ -211,7 +211,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 35e10cb7682e1c240995a3129d4eeea3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -458,7 +458,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 30238306868475015, guid: b48314bbdc1cdff409aab10e4b74fd31, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.59605706
+      value: 0.36
       objectReference: {fileID: 0}
     - target: {fileID: 30238306868475015, guid: b48314bbdc1cdff409aab10e4b74fd31, type: 3}
       propertyPath: m_LocalPosition.z
@@ -496,6 +496,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Art_Type_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5848169439276587312, guid: b48314bbdc1cdff409aab10e4b74fd31, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 60edf11a676d702438fa5fac2402eb49, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b48314bbdc1cdff409aab10e4b74fd31, type: 3}
 --- !u!4 &2224939614738272112 stripped
@@ -520,7 +524,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 30238306868475015, guid: b48314bbdc1cdff409aab10e4b74fd31, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.59605706
+      value: 0.36
       objectReference: {fileID: 0}
     - target: {fileID: 30238306868475015, guid: b48314bbdc1cdff409aab10e4b74fd31, type: 3}
       propertyPath: m_LocalPosition.z
@@ -558,6 +562,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Art_Type_01
       objectReference: {fileID: 0}
+    - target: {fileID: 5848169439276587312, guid: b48314bbdc1cdff409aab10e4b74fd31, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 60edf11a676d702438fa5fac2402eb49, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b48314bbdc1cdff409aab10e4b74fd31, type: 3}
 --- !u!4 &4634222319916124075 stripped
@@ -582,7 +590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 30238306868475015, guid: b48314bbdc1cdff409aab10e4b74fd31, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.59605706
+      value: 0.32
       objectReference: {fileID: 0}
     - target: {fileID: 30238306868475015, guid: b48314bbdc1cdff409aab10e4b74fd31, type: 3}
       propertyPath: m_LocalPosition.z
@@ -620,6 +628,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Art_Type_01 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5848169439276587312, guid: b48314bbdc1cdff409aab10e4b74fd31, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 60edf11a676d702438fa5fac2402eb49, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b48314bbdc1cdff409aab10e4b74fd31, type: 3}
 --- !u!4 &4674721299643012112 stripped
@@ -1020,7 +1032,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 30238306868475015, guid: b48314bbdc1cdff409aab10e4b74fd31, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.59605706
+      value: 0.38
       objectReference: {fileID: 0}
     - target: {fileID: 30238306868475015, guid: b48314bbdc1cdff409aab10e4b74fd31, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1058,6 +1070,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Art_Type_01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5848169439276587312, guid: b48314bbdc1cdff409aab10e4b74fd31, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 60edf11a676d702438fa5fac2402eb49, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b48314bbdc1cdff409aab10e4b74fd31, type: 3}
 --- !u!4 &8596143187545408007 stripped
