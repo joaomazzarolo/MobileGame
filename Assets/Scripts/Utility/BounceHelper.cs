@@ -10,14 +10,8 @@ public class BounceHelper : MonoBehaviour
     public float scaleBounce = 1.2f;
     public Ease ease = Ease.OutBack;
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-            Bounce();
-    }
     public void Bounce()
     {
-        Debug.Log("chegou helper");
         transform.DOScale(scaleBounce, scaleDuration).SetEase(ease).SetLoops(2, LoopType.Yoyo);
     }
 }

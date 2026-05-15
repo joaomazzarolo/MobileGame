@@ -16,7 +16,6 @@ public class ItemCollectableCoin : ItemCollectableBase
 
     protected override void OnCollect()
     {
-        Debug.Log("chegou oncollect coin");
         base.OnCollect();
         collider.enabled = false;
         collect = true;
@@ -31,7 +30,6 @@ public class ItemCollectableCoin : ItemCollectableBase
     {
         if (collect)
         {
-            Debug.Log("chegou collect update");
             transform.position = Vector3.Lerp(transform.position,
             PlayerController.Instance.transform.position, lerp * Time.deltaTime);
             if (Vector3.Distance(transform.position, PlayerController.Instance.transform.position) < minDistance)

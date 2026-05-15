@@ -34,6 +34,7 @@ public class PlayerController : Singleton<PlayerController>
 
     private void Start()
     {
+        transform.DOScale(1, 2f).SetEase(Ease.Linear);
         animatorManager.Play(AnimatorManager.AnimationType.IDLE);
         _startPosition = transform.position;
         ResetSpeed();
@@ -41,7 +42,6 @@ public class PlayerController : Singleton<PlayerController>
 
     public void Bounce()
     {
-        Debug.Log("chegou player");
         if (_bounceHelper != null)
         {
             _bounceHelper.Bounce();
@@ -124,6 +124,7 @@ public class PlayerController : Singleton<PlayerController>
     }
     public void PowerUpSpeedUp(float f)
     {
+        Bounce();
         _currentSpeed = f;
     }
     public void ResetSpeed()
@@ -132,10 +133,12 @@ public class PlayerController : Singleton<PlayerController>
     }
     public void SetInvincible(bool b)
     {
+        transform.DOScale(1.3f, .2f).SetEase(Ease.OutBack).SetLoops(5, LoopType.Restart);
         invincible = b;
     }
     public void ChangeHeight(float amount, float duration, float animationDuration, Ease ease)
     {
+        Bounce();
         transform.DOMoveY(_startPosition.y + amount,
         animationDuration).SetEase(ease);
         Invoke(nameof(ResetHeight), duration);
@@ -146,6 +149,7 @@ public class PlayerController : Singleton<PlayerController>
     }
     public void ChangeCoinCollectorSize(float amount)
     {
+        Bounce();
         coinCollector.transform.localScale = Vector3.one * amount;
     }
 }

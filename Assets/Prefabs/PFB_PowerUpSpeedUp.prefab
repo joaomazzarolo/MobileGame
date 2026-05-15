@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2093469287660630927}
   - component: {fileID: 2093469287660630924}
-  - component: {fileID: 2093469287660630931}
+  - component: {fileID: 8771466330124996044}
   m_Layer: 0
   m_Name: PFB_PowerUpSpeedUp
   m_TagString: Untagged
@@ -46,7 +46,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2093469287660630931
+--- !u!114 &8771466330124996044
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55,13 +55,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2093469287660630930}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cc892fe879824b45b309a0da4cac9fc, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b7b5803715fe75479b66fea87493a36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   compareTag: Player
   particleSystem: {fileID: 0}
   audioSource: {fileID: 0}
   duration: 5
+  amountToSpeed: 20
 --- !u!1 &4681988522552304858
 GameObject:
   m_ObjectHideFlags: 0
@@ -73,6 +74,7 @@ GameObject:
   - component: {fileID: 4719910654315808318}
   - component: {fileID: 9169543370323068005}
   - component: {fileID: 9020829375917081236}
+  - component: {fileID: 7870376476063400917}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -121,7 +123,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cfdf3aa0715d7794d9077e13aac22b61, type: 2}
+  - {fileID: 2100000, guid: c7094845b8b03964b875a700c3f90b0b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -143,3 +145,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7870376476063400917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4681988522552304858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3643f6078227ee34facc0b83048987f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 0.2
+  startColor: {r: 1, g: 1, b: 1, a: 1}
+  meshRenderer: {fileID: 9020829375917081236}

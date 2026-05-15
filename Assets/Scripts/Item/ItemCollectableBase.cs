@@ -19,20 +19,17 @@ public class ItemCollectableBase : MonoBehaviour
         if (collision.transform.CompareTag(compareTag))
         {
             Collect();
-            Debug.Log("chegou base");
         }
     }
 
     protected virtual void Collect()
     {
-        Debug.Log("chegou collect base");
         OnCollect();
         gameObject.SetActive(false);
     }
 
     protected virtual void OnCollect()
     {
-        Debug.Log("chegou oncollect base");
         if (particleSystem != null) particleSystem.Play();
         if (audioSource != null) audioSource.Play();
     }
