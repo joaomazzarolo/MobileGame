@@ -28,6 +28,8 @@ public class PlayerController : Singleton<PlayerController>
     [Header("Animation")]
     public AnimatorManager animatorManager;
 
+    [SerializeField] private BounceHelper _bounceHelper;
+
     private float _baseSpeedToAnimation = 7;
 
     private void Start()
@@ -36,6 +38,16 @@ public class PlayerController : Singleton<PlayerController>
         _startPosition = transform.position;
         ResetSpeed();
     }
+
+    public void Bounce()
+    {
+        Debug.Log("chegou player");
+        if (_bounceHelper != null)
+        {
+            _bounceHelper.Bounce();
+        }
+    }
+
     void Update()
     {
         if (!_canRun) return;
